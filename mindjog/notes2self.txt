@@ -1,0 +1,44 @@
+---reeminderrrs from like coursewerk and stuff---
+
+for now, this should work:
+gcc -o test test.cpp
+if anything else is needed, there's always a book or some slides to refer to
+
+
+bash compile.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(this only needs to happen once)
+git init
+git remote set-url origin git@github.com:soyiu100/farm_quest.git
+
+-----------
+git add .
+git commit -m "message"
+git push origin master
