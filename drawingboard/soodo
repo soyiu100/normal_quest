@@ -1,6 +1,16 @@
 two
 
+character.cpp:
+// debating whether char main will be neccessary
+char main; // there can only be one main, npcs are 0
+int money;
+anim animals[8];
+int rep;
+item bag[128];
 
+writeto.cpp:
+an autosave method gets called everytime enter is hit from main
+if user wants to save, they're allowed to save 3 files, saved externally, like the autosave
 
 you can run out of animals and throw corn at the animal to knock them out, but
 it will be very hard to convince your opponent of giving you anything substantial
