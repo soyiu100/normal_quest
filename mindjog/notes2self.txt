@@ -7,7 +7,7 @@ bash compile.sh
 for now, this should work:
 [obs] gcc -o test test.cpp
 [obs] g++ -o test test.cpp
-[curr] g++ -std=c++11 -o test test.cpp
+[curr] g++ --std=c++11 -o test test.cpp
 
 
 

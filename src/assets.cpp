@@ -1,4 +1,5 @@
 #include <iostream>
+#include "messages.h"
 
 /*
 This is a model for objects that appear in game.

@@ -1,0 +1,1 @@
+bool randBool(float trueBias);

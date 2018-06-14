@@ -4,10 +4,11 @@
 
 #include <iostream>
 #include <string>
-#include "messages.h"
+// #include "messages.h"
 #include "test.h"
+#include "rand_gen.h"
 
 int main() {
-  std::cout << messages(SPLASH_ID);
+  std::cout << randBool(-0.5);
   return 0;
 }
