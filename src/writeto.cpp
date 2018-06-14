@@ -2,6 +2,13 @@
 #include <string>
 #include "character.h"
 
+/*
+This file also acts as a model for the program,
+but of its specificity of dealing with only saving and 
+loading data between game sessions deems it neccessary for 
+its own separate file.
+*/
+
 namespace filenames {
   std::string AUTO_NAME = "pause.aut";
   std::string MANU_NAME = "pause.all"

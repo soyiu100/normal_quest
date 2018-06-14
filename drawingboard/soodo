@@ -1,17 +1,61 @@
-two
+overall structure for all cpp files:
 
-character.cpp:
-// debating whether char main will be neccessary
-char main; // there can only be one main, npcs are 0
+structs
+functions
+
+that's it; no funky classes, maybe some namespaces, but don't mix classes 
+and structs
+
+
+mvc :
+model
+view
+controller
+
+also refine object creation as time goes
+
+
+all characters
 int money;
 anim animals[8];
-int rep;
-item bag[128];
+
+
+int rep; // only for main
+item bag[128]; // only for main
+
+messages.cpp:
+-64 : splash screen
+
+
+farmland.cpp: // only unique to main character
+obj land[256]; // for both plants and animals 
+// obj should act as a superclass for plant and animul 
+
 
 writeto.cpp:
 an autosave method gets called everytime enter is hit from main
 if user wants to save, they're allowed to save 3 files, saved externally, like the autosave
 
+location :
+0 (/0?) - no npc
+a - fight
+b - spouts info or random text
+c - trade a certain animal for another certain animal
+
+
+there are debt collectors that will run into 0.1 miles; if you lose, you ???
+
 you can run out of animals and throw corn at the animal to knock them out, but
 it will be very hard to convince your opponent of giving you anything substantial
 as a reward; eg. there should be like a repuation (?) bar or something
+
+
+
+
+
+
+character.cpp: [obsolete planning]
+// debating whether char main will be neccessary
+// FINAL DECISION: it's not lol
+char main; // there can only be one main, npcs are 0
+char sex; // 0 male 1 female just for basic distinction; only for main

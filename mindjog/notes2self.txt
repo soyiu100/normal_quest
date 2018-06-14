@@ -1,9 +1,13 @@
----reeminderrrs from like coursewerk and stuff---
+---------short term reference now------------
 
-for now, this should work:
-gcc -o test test.cpp
-if anything else is needed, there's always a book or some slides to refer to
-
+bool is 1 byte
 
 bash compile.sh
+
+for now, this should work:
+[obs] gcc -o test test.cpp
+[obs] g++ -o test test.cpp
+[curr] g++ -std=c++11 -o test test.cpp
+
+
 

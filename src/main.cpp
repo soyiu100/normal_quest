@@ -1,30 +1,23 @@
 #include <stdio.h>
-#include <string.h>
 #include <string>
+#include <windows.h>
+// SetConsoleTextAttribute(GetStdHandle(STD_INPUT_HANDLE), 0x5B);
+
+#include "main.h"
 #include "messages.h"
 #include "writeto.h"
 
+/*
+This class acts as the controller for the program, taking
+input and throwing output to the user
 
+*/
 #define MAX_STRING_LENGTH (1 << 7)
 
-struct Animal {
-  int generation;
-  int health;
-  int exp; // (avg age of that animal - exp)/constant = age;
-  int trust;
-  char breed[16];
-  char type[8]; // e.g. bird, cow, dog etc.
-  struct Animal* mother;
-  struct Animal* father;
-  // struct Animal* child; // in case we want to override the number of children
-
-};
-typedef struct Animal anim;
-
 int main() {
-   std::cout << messages(-4);
-   std::cout << messages(-3);
-   while
+   std::cout << messages(-64);
+   std::cout << messages(1);
+   while (
 /*
    char string[20];
    while (strcmp(string,"quit") != 0) {
