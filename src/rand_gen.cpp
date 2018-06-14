@@ -13,3 +13,7 @@ bool randBool(float trueBias) {
     return dist(gen);
 }
 
+int randInt(int upperBound) {
+    std::uniform_int_distribution<> rng(0, upperBound);
+    return rng(gen);
+}

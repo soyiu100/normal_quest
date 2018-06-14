@@ -1,3 +1,4 @@
+#include <string>
 #include <iostream>
 #include "messages.h"
 
@@ -29,7 +30,8 @@ typedef struct Character charc_t;
 struct MainCharacter : Character {
     char gnd;
     int rep;
-    item bag[128];
+    // TODO: implement item; commented out for testing purposes
+    // item bag[128];
     
 };
 typedef struct MainCharacter mc;
@@ -39,9 +41,10 @@ struct Location {
     /* Each character will represent a specific NPC, and 
     based on what the character is, main() will handle the
     outcome. There can be a max of 7 in a location. */
-    char* name;
+    char name[24];
     char npcs[7]; 
-    bool outdoors; // 0 for outdoors, 1 for indoors
+    bool locType; // 0 for road, 1 for city
+    char buildings[8]; 
     struct Location* next;
     struct Location* prev;
 };
@@ -58,7 +61,12 @@ typedef struct Landmass land;
 //TODO: if that works, test and develop a saving feature
 loc* createLandmass() {
     // TODO: for now, just create one location dumm
-    loc* l = calloc(1, sizeof(loc));
-    printf("%d", sizeof(loc)); // to make sure there is no frag
-    l->name = generateName(
+    loc* l = (loc*) calloc(1, sizeof(loc));
+    printf("%d\n", sizeof(loc)); // to make sure there is no frag
+    // above expected: 56; if not, frag or bad math
+    std::string cityName = generateName();
+    cityName.copy(l->name, cityName.size());
+    printf("%s\n", l->name);
+    // TODO: most implementation is incomplete here lol
+    return l;
 }

@@ -2,4 +2,4 @@
 
 std::string messages(int code);
 
-std::string 
+std::string generateName();
