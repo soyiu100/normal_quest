@@ -10,4 +10,4 @@ for now, this should work:
 [curr] g++ --std=c++11 -o test test.cpp
 
 
-
+h file should contain documentation

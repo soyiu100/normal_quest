@@ -1,1 +1,4 @@
 catch.hpp is apparently some testing thing, read up on it and build tests and stuf
+- assert statements are cool too
+
+plan to delete drawingboard and mindjog near finishing cycles

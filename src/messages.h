@@ -1,5 +1,2 @@
-#include <string>
-
-std::string messages(int code);
-
-std::string generateName();
+char* messGen(int code);
+char* generateName();

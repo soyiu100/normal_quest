@@ -9,13 +9,10 @@ loading data between game sessions deems it neccessary for
 its own separate file.
 */
 
-namespace filenames {
+namespace {
   std::string AUTO_NAME = "pause.aut";
   std::string MANU_NAME = "pause.all"
 };
-
-
-using namespace filenames;
 
 int encode(int automan, charc_t user) { // auto is 0; man is 1
   ifstream fin;
@@ -45,9 +42,11 @@ int encode(int automan, charc_t user) { // auto is 0; man is 1
 
 int decode(int automan) {
   ifstream fin;
-  if (1) { // TODO: not complete
-
+  // TODO: not complete
+  if (automan == 1) {
     return 0;
+  } else if (automan == 0) {
+
   }
 
   return -1; // the decode was unsuccessful

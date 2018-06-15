@@ -20,6 +20,13 @@ struct Animal {
 };
 typedef struct Animal anim; 
 
+// TODO: implement
+/*
+struct Item {
+  map<quality, how much> (eg. heal, 40)
+};
+typedef struct Item item;
+*/
 
 struct Character {
     int money;
@@ -69,4 +76,8 @@ loc* createLandmass() {
     printf("%s\n", l->name);
     // TODO: most implementation is incomplete here lol
     return l;
+}
+
+char* getLocName(loc* location) {
+   return location->name;
 }
