@@ -1,22 +1,33 @@
-#include <string>
-#include <iostream>
-#include "messages.h"
+#include <string.h>
+#include <stdio.h>
+#include "strhandl.h"
 
 /*
 This is a model for objects that appear in game.
 */
-
+// TODO: do not share setters, getters, constructors etc., and 
+// make all struct members private
 
 struct Animal {
-    int generation;
-    int health;
-    int exp; // (avg age of that animal - exp)/constant = age;
-    int trust;
-    char breed[16];
-    char type[8]; // e.g. bird, cow, dog etc.
+    char name[16];
+
+    short health;
+    short maxHealth;
+    short generation;
+    short atk;
+    short defense;
+    short speed;
+    short trust;
+    short exp; // (avg age of that animal - exp)/constant = age;
+
+    long typBreed; // 16:48 bit ratio; type to breed
+
     struct Animal* mother;
     struct Animal* father;
-    struct Animal* child; 
+    struct Animal* child;
+
+    struct Animal* prev;
+    struct Animal* next;
 };
 typedef struct Animal anim; 
 
@@ -28,14 +39,16 @@ struct Item {
 typedef struct Item item;
 */
 
+// TODO: reorganize the internals of these structs, geez
 struct Character {
     int money;
-    anim animals[8];
+    anim* headAnim;
 }; 
-typedef struct Character charc_t;
+typedef struct Character charc;
 
 struct MainCharacter : Character {
     char gnd;
+    char name[15];
     int rep;
     // TODO: implement item; commented out for testing purposes
     // item bag[128];
@@ -49,7 +62,7 @@ struct Location {
     based on what the character is, main() will handle the
     outcome. There can be a max of 7 in a location. */
     char name[24];
-    char npcs[7]; 
+    charc npcs[7]; 
     bool locType; // 0 for road, 1 for city
     char buildings[8]; 
     struct Location* next;
@@ -71,8 +84,8 @@ loc* createLandmass() {
     loc* l = (loc*) calloc(1, sizeof(loc));
     printf("%d\n", sizeof(loc)); // to make sure there is no frag
     // above expected: 56; if not, frag or bad math
-    std::string cityName = generateName();
-    cityName.copy(l->name, cityName.size());
+    char* cityName = generateName();
+    strcpy(l->name, cityName);
     printf("%s\n", l->name);
     // TODO: most implementation is incomplete here lol
     return l;
@@ -80,4 +93,40 @@ loc* createLandmass() {
 
 char* getLocName(loc* location) {
    return location->name;
+}
+
+
+
+
+// TODO: delete or comment out after testing
+mc* arbitrMCBuild() {
+    mc* mch = (mc*) calloc(1, sizeof(loc));
+    printf("%d\n", sizeof(anim));
+    anim* startingAnim = (anim*) calloc(1, sizeof(anim));
+    mch->headAnim = startingAnim;
+    mch->headAnim->
+}
+
+void reverseAnimOrder() {
+
+
+}
+
+void switchTwoAnims() {
+
+}
+
+
+
+charc* addAnim(charc* chr, anim* newAnim) {
+    anim* curr = chr->headAnim;
+    int i = 1;
+    while(curr->next != NULL) {
+	curr = curr->next;
+        i++;
+    }
+    curr->next = newAnim;
+    // TODO: is this right??? e.g. do you have to link the
+    // anim* chr back to the chr->headAnim?
+    return chr;
 }

@@ -11,3 +11,5 @@ for now, this should work:
 
 
 h file should contain documentation
+
+strcmp returns 0 if the strings are equal to each other

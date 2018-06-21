@@ -15,6 +15,17 @@ controller
 also refine object creation as time goes
 
 
+animal {
+
+ // in both a byte represents a type/breed. 
+the strhandl get to decide what is printed after.
+
+ short(?) type : 3; 
+ int(?) breed : 5; 
+
+}
+
+
 all characters
 int money;
 anim animals[8];

@@ -14,7 +14,7 @@ namespace {
   std::string MANU_NAME = "pause.all"
 };
 
-int encode(int automan, charc_t user) { // auto is 0; man is 1
+int encode(int automan, charc user) { // auto is 0; man is 1
   ifstream fin;
   if (automan == 0) {
     fin.open(AUTO_NAME);

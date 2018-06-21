@@ -1,2 +1,3 @@
-int encode(int automan, charc_t user);
-int decode(int automan);
+typedef struct Character charc;
+
+int encode(int automan, charc user);
